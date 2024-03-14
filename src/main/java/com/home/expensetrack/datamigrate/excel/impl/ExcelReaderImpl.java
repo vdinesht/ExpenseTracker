@@ -27,9 +27,7 @@ public class ExcelReaderImpl implements ExcelReader {
             int rowCount = 0;
             List<ExcelCell[]> readRows = new ArrayList<>();
             for (Row row : sheet) {
-                if (rowCount < 100) {
-                    readRows.add(getRowCells(row, request));
-                }
+                readRows.add(getRowCells(row, request));
                 rowCount++;
             }
             ExcelReadResponse readResponse = new ExcelReadResponseImpl(request.colCount(),request.colTypes(),readRows );
@@ -59,6 +57,10 @@ public class ExcelReaderImpl implements ExcelReader {
                         ExcelCell readExcelCell = new ExcelCellImpl(cell.getNumericCellValue(), ExcelCellType.number,ExcelCellStyle.none);
                         rowCells[cell.getColumnIndex()] = readExcelCell;
                     }
+                }
+                default -> {
+                    ExcelCell blankExcelCell = new ExcelCellImpl("", ExcelCellType.blank,ExcelCellStyle.none);
+                    rowCells[cell.getColumnIndex()] = blankExcelCell;
                 }
             }
         }

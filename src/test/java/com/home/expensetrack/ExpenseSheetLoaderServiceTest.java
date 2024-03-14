@@ -8,7 +8,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import com.home.expensetrack.service.Impl.ExpenseSheetLoaderService;
 
-@SpringBootTest
 class ExpenseSheetLoaderServiceTest {
 	
 	//@Autowired

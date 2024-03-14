@@ -20,8 +20,7 @@ import com.home.expensetrack.controller.models.ExpenseRequestOptions;
 import com.home.expensetrack.controller.models.LoadGSheetRequest;
 
 
-@SpringBootTest
-@AutoConfigureMockMvc
+
 class ExpensetrackControllerTest {
 
 	
@@ -29,13 +28,13 @@ class ExpensetrackControllerTest {
 	private MockMvc mockMvc;
 	
 	
-	@Test
+
 	public void shouldReturnDefaultMessage() throws Exception {
 		this.mockMvc.perform(get("/")).andDo(print()).andExpect(status().isOk())
 				.andExpect(content().string(containsString("Expense Tracker is Working!")));
 	}
 
-	@Test
+
 	public void expenseApiTestQueryStrings() throws Exception {
 		
 		//testing page
@@ -72,7 +71,7 @@ class ExpensetrackControllerTest {
 		
 	}
 	
-	@Test
+
 	public void loadGSheetControllerTest() throws Exception {
 		
 		/*

@@ -10,4 +10,5 @@ public interface DataRow2015 {
     String type();
     String category();
     String gdrivelink();
+    int id();
 }
