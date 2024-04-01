@@ -2,15 +2,10 @@ package com.home.expensetrack.datamigrate.tracker2024;
 
 public enum PrimaryAccountType {
     Cash("Cash"),
-    BankAccount("BankAccount"),
+    Bank("Bank"),
     CreditCard("CreditCard"),
     CashPay("CashPay"),
-    DigitalPay("DigitalPay("),
-    Salary("Salary"),
-    TenantRent("TenantRent"),
-    BankInterest("BankInterest"),
-    Gift("Gift"),
-    CashLoan("CashLoan");
+    DigitalPay("DigitalPay");
 
     private final String value;
 

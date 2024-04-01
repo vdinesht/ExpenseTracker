@@ -47,7 +47,7 @@ public class DataRow2025Impl implements DataRow2015 {
 
     @Override
     public String gdrivelink() {
-        return this.gdrivelink();
+        return this.gdlink;
     }
 
     @Override
