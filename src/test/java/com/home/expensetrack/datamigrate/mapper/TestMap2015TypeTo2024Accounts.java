@@ -24,6 +24,13 @@ public class TestMap2015TypeTo2024Accounts {
     }
 
     @Test
+    void testMapOfDebitAccounts(){
+        Set<String> listDebitAccounts = Map2015TypeTo2024DebitAccounts.map.keySet();
+        listDebitAccounts.forEach(e->{System.out.println(e); System.out.println(Map2015TypeTo2024DebitAccounts.map.get(e));});
+
+        assertTrue(true);
+    }
+    @Test
     void testMapperOfTypeToCreditAccounts(){
         Set<String> creditAccounts = Map2015TypeTo2024CreditAccounts.map.values().stream().collect(Collectors.toSet());
         Set<String> types = Map2015TypeTo2024CreditAccounts.map.keySet().stream().collect(Collectors.toSet());
@@ -73,11 +80,11 @@ public class TestMap2015TypeTo2024Accounts {
     }
 
     private Set<String> getSetSecondaryAccounts(PrimaryAccountType primeAccount){
-        if (primeAccount == PrimaryAccountType.Bank) {
+        if (primeAccount == PrimaryAccountType.BankAsset) {
             return EnumSet.allOf(BankAccount.class).stream().map(e->e.getValue()).collect(Collectors.toSet());
         }
-        else if(primeAccount == PrimaryAccountType.Cash){
-            return Set.of("Cash");
+        else if(primeAccount == PrimaryAccountType.CashAsset){
+            return Set.of("CashAsset");
         }
         else if (primeAccount == PrimaryAccountType.CashPay){
             return EnumSet.allOf(CashPay.class).stream().map(e->e.getValue()).collect(Collectors.toSet());

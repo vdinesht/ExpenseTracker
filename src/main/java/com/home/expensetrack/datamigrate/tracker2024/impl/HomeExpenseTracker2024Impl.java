@@ -40,8 +40,8 @@ public class HomeExpenseTracker2024Impl implements HomeExpenseTracker2024 {
            cells[3] = new ExcelCellImpl(dataRow.description(),ExcelCellType.string, ExcelCellStyle.none);
            cells[4] = new ExcelCellImpl(dataRow.debitAccount().getValue(),ExcelCellType.string, ExcelCellStyle.none);
            cells[5] = new ExcelCellImpl(dataRow.creditAccount().getValue(),ExcelCellType.string, ExcelCellStyle.none);
-           cells[6] = new ExcelCellImpl(dataRow.debitSubAccount().getValue(),ExcelCellType.string, ExcelCellStyle.none);
-           cells[7] = new ExcelCellImpl(dataRow.creditSubAccount().getValue(),ExcelCellType.string, ExcelCellStyle.none);
+           cells[6] = new ExcelCellImpl(dataRow.debitSubAccount(),ExcelCellType.string, ExcelCellStyle.none);
+           cells[7] = new ExcelCellImpl(dataRow.creditSubAccount(),ExcelCellType.string, ExcelCellStyle.none);
            cells[8] = new ExcelCellImpl(dataRow.transType2015(),ExcelCellType.string, ExcelCellStyle.none);
            cells[9] = new ExcelCellImpl(dataRow.groupTag().getValue(),ExcelCellType.string, ExcelCellStyle.none);
            cells[10] = new ExcelCellImpl(dataRow.gdriveLink(),ExcelCellType.string, ExcelCellStyle.none);

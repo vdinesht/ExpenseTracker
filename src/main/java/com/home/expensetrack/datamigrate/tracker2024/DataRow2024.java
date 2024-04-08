@@ -9,8 +9,8 @@ public interface DataRow2024 {
     String description();
     PrimaryAccountType debitAccount();
     PrimaryAccountType creditAccount();
-    SecondaryAccountType debitSubAccount();
-    SecondaryAccountType creditSubAccount();
+    String debitSubAccount();
+    String creditSubAccount();
     String transType2015();
 
     GroupTag groupTag();
