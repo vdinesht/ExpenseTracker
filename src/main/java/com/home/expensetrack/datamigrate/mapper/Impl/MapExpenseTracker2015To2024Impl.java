@@ -2,18 +2,18 @@ package com.home.expensetrack.datamigrate.mapper.Impl;
 
 import com.home.expensetrack.datamigrate.mapper.MapExpenseTracker2015To2024;
 import com.home.expensetrack.datamigrate.tracker2015.DataRow2015;
-import com.home.expensetrack.datamigrate.tracker2015.HomeExpenseTracker2015;
-import com.home.expensetrack.datamigrate.tracker2024.DataRow2024;
-import com.home.expensetrack.datamigrate.tracker2024.HomeExpenseTracker2024;
-import com.home.expensetrack.datamigrate.tracker2024.impl.DataRow2024Impl;
-import com.home.expensetrack.datamigrate.tracker2024.impl.HomeExpenseTracker2024Impl;
+import com.home.expensetrack.datamigrate.tracker2015.ExpenseTracker2015Reader;
+import com.home.expensetrack.tracker2024.DataRow2024;
+import com.home.expensetrack.tracker2024.ExpenseTracker2024Writer;
+import com.home.expensetrack.tracker2024.impl.DataRow2024Impl;
+import com.home.expensetrack.tracker2024.impl.ExpenseTracker2024ExcelWriterImpl;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class MapExpenseTracker2015To2024Impl implements MapExpenseTracker2015To2024 {
     @Override
-    public HomeExpenseTracker2024 transform(HomeExpenseTracker2015 tracker2015) {
+    public ExpenseTracker2024Writer transform(ExpenseTracker2015Reader tracker2015) {
 
         List<DataRow2024> newRows = new ArrayList<>();
         for(DataRow2015 row : tracker2015.getAllRows()) {
@@ -22,6 +22,6 @@ public class MapExpenseTracker2015To2024Impl implements MapExpenseTracker2015To2
                 newRows.add(newRow);
             }
         }
-        return new HomeExpenseTracker2024Impl(newRows);
+        return new ExpenseTracker2024ExcelWriterImpl(newRows);
     }
 }

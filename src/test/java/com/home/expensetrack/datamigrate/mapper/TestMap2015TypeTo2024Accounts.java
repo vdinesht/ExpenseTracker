@@ -4,7 +4,7 @@ import com.home.expensetrack.datamigrate.mapper.Impl.Map2015TypeTo2024CreditAcco
 import com.home.expensetrack.datamigrate.mapper.Impl.Map2015TypeTo2024CreditSubAccounts;
 import com.home.expensetrack.datamigrate.mapper.Impl.Map2015TypeTo2024DebitAccounts;
 import com.home.expensetrack.datamigrate.mapper.Impl.Map2015TypeTo2024DebitSubAccounts;
-import com.home.expensetrack.datamigrate.tracker2024.*;
+import com.home.expensetrack.tracker2024.*;
 import org.junit.jupiter.api.Test;
 
 import java.util.*;

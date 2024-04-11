@@ -1,11 +1,11 @@
-package com.home.expensetrack.datamigrate.tracker2015.impl;
+package com.home.expensetrack.tracker2024.impl;
 
 import com.home.expensetrack.excel.ExcelCellType;
 import com.home.expensetrack.excel.ExcelReadRequest;
 
-public class ExpenseTracker2015ExcelReadRequestImpl implements ExcelReadRequest {
+public class ExpenseTracker2024ExcelReadRequestImpl implements ExcelReadRequest {
 
-    private final int col = 8;
+    private final int col = 12;
     private String fileName;
     @Override
     public int colCount() {
@@ -22,7 +22,11 @@ public class ExpenseTracker2015ExcelReadRequestImpl implements ExcelReadRequest 
         cellTypes[4] = ExcelCellType.string;
         cellTypes[5] = ExcelCellType.string;
         cellTypes[6] = ExcelCellType.string;
-        cellTypes[7] = ExcelCellType.number;
+        cellTypes[7] = ExcelCellType.string;
+        cellTypes[8] = ExcelCellType.string;
+        cellTypes[9] = ExcelCellType.string;
+        cellTypes[10] = ExcelCellType.string;
+        cellTypes[11] = ExcelCellType.number;
         return cellTypes;
     }
 
@@ -31,7 +35,8 @@ public class ExpenseTracker2015ExcelReadRequestImpl implements ExcelReadRequest 
         return this.fileName;
     }
 
-    public ExpenseTracker2015ExcelReadRequestImpl(String fileName) {
+    public ExpenseTracker2024ExcelReadRequestImpl(String fileName) {
         this.fileName = fileName;
     }
+
 }
